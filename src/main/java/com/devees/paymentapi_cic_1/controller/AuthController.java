@@ -1,0 +1,81 @@
+package com.devees.paymentapi_cic_1.controller;
+
+import com.devees.paymentapi_cic_1.dto.RequestDTO.LoginRequest;
+import com.devees.paymentapi_cic_1.dto.RequestDTO.RegisterRequestDTO;
+import com.devees.paymentapi_cic_1.dto.ResponseDTO.AuthResponseDTO;
+import com.devees.paymentapi_cic_1.entity.RoleEntity;
+import com.devees.paymentapi_cic_1.entity.UserEntity;
+import com.devees.paymentapi_cic_1.exception.DuplicateResourceException;
+import com.devees.paymentapi_cic_1.repository.RoleRepository;
+import com.devees.paymentapi_cic_1.repository.UserRepository;
+import com.devees.paymentapi_cic_1.security.JwtService;
+import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.UserDetails;
+import jakarta.validation.Valid;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/api/auth")
+public class AuthController {
+
+    @Autowired
+    private AuthenticationManager authenticationManager;
+
+    @Autowired
+    private JwtService jwtService;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
+    @Autowired
+    private UserRepository userRepository;
+
+    @Autowired
+    private RoleRepository roleRepository;
+
+
+
+    @PostMapping("/login")
+    public ResponseEntity<AuthResponseDTO> login(@Valid @RequestBody LoginRequest request) {
+        Authentication auth = authenticationManager.authenticate(
+                new UsernamePasswordAuthenticationToken(request.getUsername(), request.getPassword())
+        );
+        UserDetails userDetails = (UserDetails) auth.getPrincipal();
+        String token = jwtService.generateToken(userDetails);
+        return ResponseEntity.ok(AuthResponseDTO.builder()
+                .token(token)
+                .username(userDetails.getUsername())
+                .build());
+    }
+
+    @PostMapping("/register")
+    //TODO add mail notification
+    public ResponseEntity<AuthResponseDTO> register(@Valid @RequestBody RegisterRequestDTO request) {
+        if (userRepository.findByUsername(request.getUsername()).isPresent()) {
+            throw new DuplicateResourceException("Username already exists");
+        }
+
+        String roleName = (request.getRole() != null) ? request.getRole() : "ROLE_USER";
+        RoleEntity role = roleRepository.findByName(roleName)
+                .orElseThrow(() -> new RuntimeException("Role not found: " + roleName));
+
+        UserEntity user = UserEntity.builder()
+                .username(request.getUsername())
+                .password(passwordEncoder.encode(request.getPassword()))
+                .roles(new java.util.HashSet<>(java.util.List.of(role)))
+                .build();
+        userRepository.save(user);
+
+        String token = jwtService.generateToken(user);
+        return ResponseEntity.ok(AuthResponseDTO.builder()
+                .token(token)
+                .username(user.getUsername())
+                .build());
+    }
+}

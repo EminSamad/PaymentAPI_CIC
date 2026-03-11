@@ -1,0 +1,20 @@
+  spring:
+    datasource:
+      url: jdbc:postgresql://localhost:5432/paymentdb
+      username: postgres
+      password: EminSamad
+
+    jpa:
+      hibernate:
+        ddl-auto: update
+      show-sql: true
+      properties:
+        hibernate:
+          format_sql: true
+          dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  security:
+    jwt:
+      secret: 9a7f3d2c4b6e8f1a9c7d5e3f2b1a4c6d8e9f1a2b3c4d5e6f7a8b9c0d1e2f3a4
+      expiration: 3600000
+
