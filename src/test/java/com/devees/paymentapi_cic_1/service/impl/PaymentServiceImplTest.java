@@ -41,6 +41,7 @@ class PaymentServiceImplTest {
     private PaymentEntity payment;
     private PaymentRequestDTO request;
 
+    @BeforeEach
      void setUp() {
         subscriber = new SubscriberEntity();
         subscriber.setId(1L);
@@ -81,7 +82,7 @@ class PaymentServiceImplTest {
 
     @Test
     void makePayment_ShouldThrowException_WhenSubscriberNotFound() {
-        when(subscriberRepository.findBySubscriberCodeAndIsDeletedFalse("SUB005"))
+        when(subscriberRepository.findBySubscriberCodeAndIsDeletedFalse("SUB001"))
                 .thenReturn(Optional.empty());
 
         assertThrows(ResourceNotFoundException.class, () -> service.makePayment(request));

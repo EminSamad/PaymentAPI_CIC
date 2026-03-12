@@ -26,6 +26,9 @@ public class UserEntity implements UserDetails {
 
     private String password;
 
+    @Column(unique = true)
+    private String email;
+
     @Builder.Default
     private boolean deleted = false;
 

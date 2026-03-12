@@ -9,6 +9,7 @@ import com.devees.paymentapi_cic_1.exception.DuplicateResourceException;
 import com.devees.paymentapi_cic_1.repository.RoleRepository;
 import com.devees.paymentapi_cic_1.repository.UserRepository;
 import com.devees.paymentapi_cic_1.security.JwtService;
+import com.devees.paymentapi_cic_1.service.EmailService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -39,6 +40,9 @@ public class AuthController {
     @Autowired
     private RoleRepository roleRepository;
 
+    @Autowired
+    private EmailService emailService;
+
 
 
     @PostMapping("/login")
@@ -54,8 +58,8 @@ public class AuthController {
                 .build());
     }
 
-    @PostMapping("/register")
     //TODO add mail notification
+    @PostMapping("/register")
     public ResponseEntity<AuthResponseDTO> register(@Valid @RequestBody RegisterRequestDTO request) {
         if (userRepository.findByUsername(request.getUsername()).isPresent()) {
             throw new DuplicateResourceException("Username already exists");
@@ -68,9 +72,12 @@ public class AuthController {
         UserEntity user = UserEntity.builder()
                 .username(request.getUsername())
                 .password(passwordEncoder.encode(request.getPassword()))
+                .email(request.getEmail())
                 .roles(new java.util.HashSet<>(java.util.List.of(role)))
                 .build();
         userRepository.save(user);
+
+        emailService.sendWelcomeEmail(request.getEmail(), request.getUsername());
 
         String token = jwtService.generateToken(user);
         return ResponseEntity.ok(AuthResponseDTO.builder()

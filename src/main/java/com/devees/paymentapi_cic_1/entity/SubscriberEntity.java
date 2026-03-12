@@ -44,6 +44,9 @@ public class SubscriberEntity {
     @Column(name = "is_deleted", nullable = false)
     private boolean isDeleted = false;
 
+    @Column(unique = true)
+    private String email;
+
     @OneToMany(mappedBy = "subscriber")
     @JsonManagedReference
     private List<PaymentEntity> payments;

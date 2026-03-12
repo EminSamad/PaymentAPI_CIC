@@ -1,5 +1,6 @@
 package com.devees.paymentapi_cic_1.dto.RequestDTO;
 
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
@@ -16,4 +17,8 @@ public class RegisterRequestDTO {
     private String password;
 
     private String role;
+
+    @NotBlank(message = "Email cannot be empty")
+    @Email(message = "Invalid email format")
+    private String email;
 }
