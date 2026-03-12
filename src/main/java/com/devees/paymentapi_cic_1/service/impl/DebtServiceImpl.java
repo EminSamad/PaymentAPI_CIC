@@ -8,6 +8,7 @@ import com.devees.paymentapi_cic_1.exception.ResourceNotFoundException;
 import com.devees.paymentapi_cic_1.repository.DebtRepository;
 import com.devees.paymentapi_cic_1.repository.SubscriberRepository;
 import com.devees.paymentapi_cic_1.service.DebtService;
+import com.devees.paymentapi_cic_1.service.EmailService;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -20,9 +21,14 @@ public class DebtServiceImpl implements DebtService {
     private final DebtRepository debtRepository;
     private final SubscriberRepository subscriberRepository;
 
-    public DebtServiceImpl(DebtRepository debtRepository, SubscriberRepository subscriberRepository) {
+    private final EmailService emailService;
+
+    public DebtServiceImpl(DebtRepository debtRepository,
+                           SubscriberRepository subscriberRepository,
+                           EmailService emailService) {
         this.debtRepository = debtRepository;
         this.subscriberRepository = subscriberRepository;
+        this.emailService = emailService;
     }
 
     @Override
@@ -38,6 +44,14 @@ public class DebtServiceImpl implements DebtService {
                 .build();
 
         debtRepository.save(debt);
+
+        if (subscriber.getEmail() != null) {
+            emailService.sendDebtAddedEmail(
+                    subscriber.getEmail(),
+                    subscriber.getSubscriberCode(),
+                    request.getAmount()
+            );
+        }
 
         subscriber.setDebt(subscriber.getDebt().add(request.getAmount()));
         subscriberRepository.save(subscriber);

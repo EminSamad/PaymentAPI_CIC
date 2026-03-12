@@ -7,6 +7,7 @@ import com.devees.paymentapi_cic_1.exception.DuplicateResourceException;
 import com.devees.paymentapi_cic_1.exception.ResourceNotFoundException;
 import com.devees.paymentapi_cic_1.mapper.SubscriberMapper;
 import com.devees.paymentapi_cic_1.repository.SubscriberRepository;
+import com.devees.paymentapi_cic_1.service.EmailService;
 import com.devees.paymentapi_cic_1.service.SubscriberService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,8 +23,11 @@ public class SubscriberServiceImpl implements SubscriberService {
 
     private final SubscriberRepository repository;
 
-    public SubscriberServiceImpl(SubscriberRepository repository) {
+    private final EmailService emailService;
+
+    public SubscriberServiceImpl(SubscriberRepository repository, EmailService emailService) {
         this.repository = repository;
+        this.emailService = emailService;
     }
 
     @Override
@@ -66,6 +70,10 @@ public class SubscriberServiceImpl implements SubscriberService {
         }
         SubscriberEntity entity = SubscriberMapper.toEntity(request);
         repository.save(entity);
+
+        if (entity.getEmail() != null) {
+            emailService.sendSubscriberCreatedEmail(entity.getEmail(), entity.getSubscriberCode());
+        }
         log.info("Subscriber created successfully: {}", request.getSubscriberCode());
         return SubscriberMapper.toDTO(entity);
     }

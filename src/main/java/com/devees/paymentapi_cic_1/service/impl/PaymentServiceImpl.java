@@ -114,6 +114,14 @@ public class PaymentServiceImpl implements PaymentService {
 
         paymentRepository.save(payment);
 
+        if (subscriber.getEmail() != null) {
+            emailService.sendBalanceToppedUpEmail(
+                    subscriber.getEmail(),
+                    subscriberCode,
+                    amount
+            );
+        }
+
         log.info("Balance added successfully for subscriber: {}", subscriberCode);
         return mapToDTO(payment);
     }
