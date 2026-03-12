@@ -23,5 +23,4 @@ public interface PaymentService {
 
     List<PaymentResponseDTO> getPaymentsBySubscriberCode(String subscriberCode);
 
-    PaymentResponseDTO addBalance(String subscriberCode, BigDecimal amount);
 }

@@ -89,44 +89,7 @@ public class PaymentServiceImpl implements PaymentService {
         return mapToDTO(payment);
     }
 
-    @Override
-    public PaymentResponseDTO addBalance(String subscriberCode, BigDecimal amount) {
-        log.info("Adding balance for subscriber: {}, amount: {}", subscriberCode, amount);
-
-        SubscriberEntity subscriber = subscriberRepository
-                .findBySubscriberCodeAndIsDeletedFalse(subscriberCode)
-                .orElseThrow(() -> {
-                    log.error("Subscriber not found: {}", subscriberCode);
-                    return new ResourceNotFoundException("Subscriber not found");
-                });
-
-        subscriber.setBalance(subscriber.getBalance().add(amount));
-        subscriberRepository.save(subscriber);
-
-        PaymentEntity payment = PaymentEntity.builder()
-                .subscriber(subscriber)
-                .balance(amount)
-                .status(PaymentStatus.OKAY)
-                .transactionCode(UUID.randomUUID().toString())
-                .dateTime(LocalDateTime.now())
-                .deleted(false)
-                .build();
-
-        paymentRepository.save(payment);
-
-        if (subscriber.getEmail() != null) {
-            emailService.sendBalanceToppedUpEmail(
-                    subscriber.getEmail(),
-                    subscriberCode,
-                    amount
-            );
-        }
-
-        log.info("Balance added successfully for subscriber: {}", subscriberCode);
-        return mapToDTO(payment);
-    }
-
-    @Override
+        @Override
     public List<PaymentResponseDTO> getPaymentsBySubscriberCode(String subscriberCode) {
         log.info("Getting payments for subscriber: {}", subscriberCode);
 
