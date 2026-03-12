@@ -200,3 +200,280 @@ Consider defining a bean of type 'org.springframework.mail.javamail.JavaMailSend
 2026-03-12 10:04:08 [http-nio-8080-exec-9] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 895 ms
 2026-03-12 10:05:29 [http-nio-8080-exec-3] INFO  c.d.p.service.impl.EmailServiceImpl - Sending welcome email to: messi123@test.com
 2026-03-12 10:05:35 [http-nio-8080-exec-3] INFO  c.d.p.service.impl.EmailServiceImpl - Welcome email sent to: messi123@test.com
+2026-03-12 10:07:30 [SpringApplicationShutdownHook] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-12 10:07:30 [tomcat-shutdown] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-03-12 10:07:30 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-12 10:07:30 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-12 10:07:30 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-03-12 10:24:41 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.0.1.Final
+2026-03-12 10:24:41 [restartedMain] INFO  c.d.p.PaymentApiCic1Application - Starting PaymentApiCic1Application using Java 23.0.2 with PID 27016 (C:\Users\Emin\IdeaProjects\PaymentAPI_CIC_1\build\classes\java\main started by Emin in C:\Users\Emin\IdeaProjects\PaymentAPI_CIC_1)
+2026-03-12 10:24:41 [restartedMain] DEBUG c.d.p.PaymentApiCic1Application - Running with Spring Boot v4.0.2, Spring v7.0.3
+2026-03-12 10:24:41 [restartedMain] INFO  c.d.p.PaymentApiCic1Application - No active profile set, falling back to 1 default profile: "default"
+2026-03-12 10:24:41 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-03-12 10:24:41 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-03-12 10:24:42 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-12 10:24:42 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 35 ms. Found 5 JPA repository interfaces.
+2026-03-12 10:24:42 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-03-12 10:24:42 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-03-12 10:24:42 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-12 10:24:42 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-03-12 10:24:42 [restartedMain] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 1086 ms
+2026-03-12 10:24:42 [restartedMain] INFO  org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-12 10:24:42 [restartedMain] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-03-12 10:24:43 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-12 10:24:43 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-12 10:24:43 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3f345777
+2026-03-12 10:24:43 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-12 10:24:43 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-12 10:24:43 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/paymentdb]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.6
+	Default catalog/schema: paymentdb/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-12 10:24:44 [restartedMain] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-12 10:24:44 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-12 10:24:44 [restartedMain] INFO  o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-12 10:24:44 [restartedMain] DEBUG c.d.p.s.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-03-12 10:24:44 [restartedMain] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-12 10:24:44 [restartedMain] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-03-12 10:24:45 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-03-12 10:24:45 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-03-12 10:24:45 [restartedMain] INFO  c.d.p.PaymentApiCic1Application - Started PaymentApiCic1Application in 3.869 seconds (process running for 4.334)
+2026-03-12 10:25:55 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-12 10:25:55 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-03-12 10:25:55 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-03-12 10:25:56 [http-nio-8080-exec-4] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 630 ms
+2026-03-12 10:29:19 [http-nio-8080-exec-8] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.security.authentication.BadCredentialsException: Bad credentials]
+2026-03-12 10:35:10 [SpringApplicationShutdownHook] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-12 10:35:10 [tomcat-shutdown] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-03-12 10:35:10 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-12 10:35:10 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-12 10:35:10 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-03-12 10:35:12 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.0.1.Final
+2026-03-12 10:35:12 [restartedMain] INFO  c.d.p.PaymentApiCic1Application - Starting PaymentApiCic1Application using Java 23.0.2 with PID 27188 (C:\Users\Emin\IdeaProjects\PaymentAPI_CIC_1\build\classes\java\main started by Emin in C:\Users\Emin\IdeaProjects\PaymentAPI_CIC_1)
+2026-03-12 10:35:12 [restartedMain] DEBUG c.d.p.PaymentApiCic1Application - Running with Spring Boot v4.0.2, Spring v7.0.3
+2026-03-12 10:35:12 [restartedMain] INFO  c.d.p.PaymentApiCic1Application - No active profile set, falling back to 1 default profile: "default"
+2026-03-12 10:35:12 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-03-12 10:35:12 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-03-12 10:35:12 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-12 10:35:12 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 32 ms. Found 5 JPA repository interfaces.
+2026-03-12 10:35:13 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-03-12 10:35:13 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-03-12 10:35:13 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-12 10:35:13 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-03-12 10:35:13 [restartedMain] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 1031 ms
+2026-03-12 10:35:13 [restartedMain] INFO  org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-12 10:35:13 [restartedMain] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-03-12 10:35:13 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-12 10:35:13 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-12 10:35:13 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@cb6826c
+2026-03-12 10:35:13 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-12 10:35:13 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-12 10:35:13 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/paymentdb]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.6
+	Default catalog/schema: paymentdb/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-12 10:35:14 [restartedMain] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-12 10:35:14 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-12 10:35:14 [restartedMain] INFO  o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-12 10:35:14 [restartedMain] DEBUG c.d.p.s.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-03-12 10:35:15 [restartedMain] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-12 10:35:15 [restartedMain] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-03-12 10:35:15 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-03-12 10:35:15 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-03-12 10:35:15 [restartedMain] INFO  c.d.p.PaymentApiCic1Application - Started PaymentApiCic1Application in 3.68 seconds (process running for 4.143)
+2026-03-12 10:35:26 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-12 10:35:26 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-03-12 10:35:26 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-03-12 10:35:27 [http-nio-8080-exec-10] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 560 ms
+2026-03-12 10:35:45 [http-nio-8080-exec-8] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.security.authentication.BadCredentialsException: Bad credentials]
+2026-03-12 10:35:53 [SpringApplicationShutdownHook] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-12 10:35:53 [tomcat-shutdown] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-03-12 10:35:53 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-12 10:35:53 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-12 10:35:53 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-03-12 10:35:56 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.0.1.Final
+2026-03-12 10:35:56 [restartedMain] INFO  c.d.p.PaymentApiCic1Application - Starting PaymentApiCic1Application using Java 23.0.2 with PID 15148 (C:\Users\Emin\IdeaProjects\PaymentAPI_CIC_1\build\classes\java\main started by Emin in C:\Users\Emin\IdeaProjects\PaymentAPI_CIC_1)
+2026-03-12 10:35:56 [restartedMain] DEBUG c.d.p.PaymentApiCic1Application - Running with Spring Boot v4.0.2, Spring v7.0.3
+2026-03-12 10:35:56 [restartedMain] INFO  c.d.p.PaymentApiCic1Application - No active profile set, falling back to 1 default profile: "default"
+2026-03-12 10:35:56 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-03-12 10:35:56 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-03-12 10:35:56 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-12 10:35:56 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 39 ms. Found 5 JPA repository interfaces.
+2026-03-12 10:35:57 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-03-12 10:35:57 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-03-12 10:35:57 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-12 10:35:57 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-03-12 10:35:57 [restartedMain] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 1087 ms
+2026-03-12 10:35:57 [restartedMain] INFO  org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-12 10:35:57 [restartedMain] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-03-12 10:35:57 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-12 10:35:57 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-12 10:35:57 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3c827bbd
+2026-03-12 10:35:57 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-12 10:35:57 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-12 10:35:57 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/paymentdb]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.6
+	Default catalog/schema: paymentdb/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-12 10:35:58 [restartedMain] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-12 10:35:58 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-12 10:35:58 [restartedMain] INFO  o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-12 10:35:58 [restartedMain] DEBUG c.d.p.s.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-03-12 10:35:59 [restartedMain] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-12 10:35:59 [restartedMain] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-03-12 10:35:59 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-03-12 10:35:59 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-03-12 10:35:59 [restartedMain] INFO  c.d.p.PaymentApiCic1Application - Started PaymentApiCic1Application in 3.817 seconds (process running for 4.269)
+2026-03-12 10:36:02 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-12 10:36:02 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-03-12 10:36:02 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-03-12 10:36:03 [http-nio-8080-exec-9] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 546 ms
+2026-03-12 10:36:16 [http-nio-8080-exec-10] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.security.authentication.BadCredentialsException: Bad credentials]
+2026-03-12 10:36:28 [SpringApplicationShutdownHook] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-12 10:36:28 [tomcat-shutdown] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-03-12 10:36:28 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-12 10:36:28 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-12 10:36:28 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-03-12 10:36:29 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.0.1.Final
+2026-03-12 10:36:30 [restartedMain] INFO  c.d.p.PaymentApiCic1Application - Starting PaymentApiCic1Application using Java 23.0.2 with PID 26168 (C:\Users\Emin\IdeaProjects\PaymentAPI_CIC_1\build\classes\java\main started by Emin in C:\Users\Emin\IdeaProjects\PaymentAPI_CIC_1)
+2026-03-12 10:36:30 [restartedMain] DEBUG c.d.p.PaymentApiCic1Application - Running with Spring Boot v4.0.2, Spring v7.0.3
+2026-03-12 10:36:30 [restartedMain] INFO  c.d.p.PaymentApiCic1Application - No active profile set, falling back to 1 default profile: "default"
+2026-03-12 10:36:30 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-03-12 10:36:30 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-03-12 10:36:30 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-12 10:36:30 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 33 ms. Found 5 JPA repository interfaces.
+2026-03-12 10:36:31 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-03-12 10:36:31 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-03-12 10:36:31 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-12 10:36:31 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-03-12 10:36:31 [restartedMain] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 1029 ms
+2026-03-12 10:36:31 [restartedMain] INFO  org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-12 10:36:31 [restartedMain] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-03-12 10:36:31 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-12 10:36:31 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-12 10:36:31 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3c827bbd
+2026-03-12 10:36:31 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-12 10:36:31 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-12 10:36:31 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/paymentdb]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.6
+	Default catalog/schema: paymentdb/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-12 10:36:32 [restartedMain] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-12 10:36:32 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-12 10:36:32 [restartedMain] INFO  o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-12 10:36:32 [restartedMain] DEBUG c.d.p.s.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-03-12 10:36:32 [restartedMain] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-12 10:36:32 [restartedMain] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-03-12 10:36:33 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-03-12 10:36:33 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-03-12 10:36:33 [restartedMain] INFO  c.d.p.PaymentApiCic1Application - Started PaymentApiCic1Application in 3.657 seconds (process running for 4.124)
+2026-03-12 10:38:20 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-12 10:38:20 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-03-12 10:38:20 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-03-12 10:38:20 [http-nio-8080-exec-10] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 513 ms
+2026-03-12 10:41:06 [http-nio-8080-exec-5] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<com.devees.paymentapi_cic_1.dto.ResponseDTO.SubscriberResponseDTO> com.devees.paymentapi_cic_1.controller.SubscriberController.createSubscriber(com.devees.paymentapi_cic_1.dto.RequestDTO.SubscriberRequestDTO) with 4 errors: [Field error in object 'subscriberRequestDTO' on field 'idNumber': rejected value [null]; codes [NotBlank.subscriberRequestDTO.idNumber,NotBlank.idNumber,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [subscriberRequestDTO.idNumber,idNumber]; arguments []; default message [idNumber]]; default message [ID number cannot be empty]] [Field error in object 'subscriberRequestDTO' on field 'fullName': rejected value [null]; codes [NotBlank.subscriberRequestDTO.fullName,NotBlank.fullName,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [subscriberRequestDTO.fullName,fullName]; arguments []; default message [fullName]]; default message [Full name cannot be empty]] [Field error in object 'subscriberRequestDTO' on field 'subscriberCode': rejected value [null]; codes [NotBlank.subscriberRequestDTO.subscriberCode,NotBlank.subscriberCode,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [subscriberRequestDTO.subscriberCode,subscriberCode]; arguments []; default message [subscriberCode]]; default message [Subscriber code cannot be empty]] [Field error in object 'subscriberRequestDTO' on field 'subscriberType': rejected value [null]; codes [NotNull.subscriberRequestDTO.subscriberType,NotNull.subscriberType,NotNull.com.devees.paymentapi_cic_1.entity.SubscriberType,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [subscriberRequestDTO.subscriberType,subscriberType]; arguments []; default message [subscriberType]]; default message [Subscriber type cannot be null]] ]
+2026-03-12 10:42:25 [http-nio-8080-exec-9] INFO  c.d.p.s.impl.SubscriberServiceImpl - Creating subscriber with code: SUB177
+2026-03-12 10:42:25 [http-nio-8080-exec-9] INFO  c.d.p.s.impl.SubscriberServiceImpl - Subscriber created successfully: SUB177
+2026-03-12 10:43:27 [http-nio-8080-exec-7] INFO  c.d.p.s.impl.PaymentServiceImpl - Making payment for subscriber: SUB999
+2026-03-12 10:43:27 [http-nio-8080-exec-7] ERROR c.d.p.s.impl.PaymentServiceImpl - Subscriber not found: SUB999
+2026-03-12 10:43:27 [http-nio-8080-exec-7] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.devees.paymentapi_cic_1.exception.ResourceNotFoundException: Subscriber not found]
+2026-03-12 10:43:35 [http-nio-8080-exec-6] INFO  c.d.p.s.impl.PaymentServiceImpl - Making payment for subscriber: SUB177
+2026-03-12 10:43:35 [http-nio-8080-exec-6] INFO  c.d.p.service.impl.EmailServiceImpl - Sending payment success email to: messi123@test.com
+2026-03-12 10:43:38 [http-nio-8080-exec-6] INFO  c.d.p.service.impl.EmailServiceImpl - Payment success email sent to: messi123@test.com
+2026-03-12 10:43:38 [http-nio-8080-exec-6] WARN  org.hibernate.orm.jdbc.error - HHH000247: ErrorCode: 0, SQLState: 23502
+2026-03-12 10:43:38 [http-nio-8080-exec-6] WARN  org.hibernate.orm.jdbc.error - ERROR: null value in column "deleted" of relation "payments" violates not-null constraint
+  Detail: Failing row contains (14, 50.00, 2026-03-12 10:43:38.922635, OKAY, 13, 1863ddae-4001-4019-a2bd-68ca700595de, null).
+2026-03-12 10:43:38 [http-nio-8080-exec-6] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.dao.DataIntegrityViolationException: could not execute statement [ERROR: null value in column "deleted" of relation "payments" violates not-null constraint<EOL>  Detail: Failing row contains (14, 50.00, 2026-03-12 10:43:38.922635, OKAY, 13, 1863ddae-4001-4019-a2bd-68ca700595de, null).] [insert into payments (balance,date_time,deleted,status,subscriber_id,transaction_code) values (?,?,?,?,?,?)]; SQL [insert into payments (balance,date_time,deleted,status,subscriber_id,transaction_code) values (?,?,?,?,?,?)]; constraint [deleted]]
+2026-03-12 10:44:02 [SpringApplicationShutdownHook] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-12 10:44:02 [tomcat-shutdown] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-03-12 10:44:02 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-12 10:44:02 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-12 10:44:02 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-03-12 10:44:04 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.0.1.Final
+2026-03-12 10:44:04 [restartedMain] INFO  c.d.p.PaymentApiCic1Application - Starting PaymentApiCic1Application using Java 23.0.2 with PID 13368 (C:\Users\Emin\IdeaProjects\PaymentAPI_CIC_1\build\classes\java\main started by Emin in C:\Users\Emin\IdeaProjects\PaymentAPI_CIC_1)
+2026-03-12 10:44:04 [restartedMain] DEBUG c.d.p.PaymentApiCic1Application - Running with Spring Boot v4.0.2, Spring v7.0.3
+2026-03-12 10:44:04 [restartedMain] INFO  c.d.p.PaymentApiCic1Application - No active profile set, falling back to 1 default profile: "default"
+2026-03-12 10:44:04 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-03-12 10:44:04 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-03-12 10:44:04 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-12 10:44:04 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 35 ms. Found 5 JPA repository interfaces.
+2026-03-12 10:44:05 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-03-12 10:44:05 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-03-12 10:44:05 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-12 10:44:05 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-03-12 10:44:05 [restartedMain] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 1068 ms
+2026-03-12 10:44:05 [restartedMain] INFO  org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-12 10:44:05 [restartedMain] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-03-12 10:44:05 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-12 10:44:05 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-12 10:44:05 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@24a335b6
+2026-03-12 10:44:05 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-12 10:44:06 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-12 10:44:06 [restartedMain] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/paymentdb]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.6
+	Default catalog/schema: paymentdb/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-12 10:44:06 [restartedMain] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-12 10:44:06 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-12 10:44:06 [restartedMain] INFO  o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-12 10:44:06 [restartedMain] DEBUG c.d.p.s.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2026-03-12 10:44:07 [restartedMain] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-12 10:44:07 [restartedMain] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-03-12 10:44:07 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-03-12 10:44:07 [restartedMain] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-03-12 10:44:07 [restartedMain] INFO  c.d.p.PaymentApiCic1Application - Started PaymentApiCic1Application in 3.658 seconds (process running for 4.119)
+2026-03-12 10:44:11 [http-nio-8080-exec-7] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-12 10:44:11 [http-nio-8080-exec-7] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-03-12 10:44:11 [http-nio-8080-exec-7] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-03-12 10:44:12 [http-nio-8080-exec-7] INFO  c.d.p.s.impl.PaymentServiceImpl - Making payment for subscriber: SUB177
+2026-03-12 10:44:12 [http-nio-8080-exec-7] INFO  c.d.p.service.impl.EmailServiceImpl - Sending payment success email to: messi123@test.com
+2026-03-12 10:44:15 [http-nio-8080-exec-7] INFO  c.d.p.service.impl.EmailServiceImpl - Payment success email sent to: messi123@test.com
+2026-03-12 10:44:15 [http-nio-8080-exec-7] WARN  org.hibernate.orm.jdbc.error - HHH000247: ErrorCode: 0, SQLState: 23502
+2026-03-12 10:44:15 [http-nio-8080-exec-7] WARN  org.hibernate.orm.jdbc.error - ERROR: null value in column "deleted" of relation "payments" violates not-null constraint
+  Detail: Failing row contains (15, 50.00, 2026-03-12 10:44:15.3318, OKAY, 13, 763e1ddf-0dc6-47d7-81ff-283725678208, null).
+2026-03-12 10:44:15 [http-nio-8080-exec-7] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.dao.DataIntegrityViolationException: could not execute statement [ERROR: null value in column "deleted" of relation "payments" violates not-null constraint<EOL>  Detail: Failing row contains (15, 50.00, 2026-03-12 10:44:15.3318, OKAY, 13, 763e1ddf-0dc6-47d7-81ff-283725678208, null).] [insert into payments (balance,date_time,deleted,status,subscriber_id,transaction_code) values (?,?,?,?,?,?)]; SQL [insert into payments (balance,date_time,deleted,status,subscriber_id,transaction_code) values (?,?,?,?,?,?)]; constraint [deleted]]
+2026-03-12 10:45:05 [SpringApplicationShutdownHook] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-12 10:45:05 [tomcat-shutdown] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-03-12 10:45:05 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-12 10:45:05 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-12 10:45:05 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

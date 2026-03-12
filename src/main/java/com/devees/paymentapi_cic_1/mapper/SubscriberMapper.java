@@ -29,6 +29,7 @@ public class SubscriberMapper {
         entity.setDebt(request.getDebt() != null ? request.getDebt() : BigDecimal.ZERO);
         entity.setBalance(request.getBalance() != null ? request.getBalance() : BigDecimal.ZERO);
         entity.setDeleted(false);
+        entity.setEmail(request.getEmail());
         return entity;
     }
 

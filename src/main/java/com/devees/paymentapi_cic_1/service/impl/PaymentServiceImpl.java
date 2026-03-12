@@ -9,6 +9,7 @@ import com.devees.paymentapi_cic_1.entity.SubscriberEntity;
 import com.devees.paymentapi_cic_1.exception.ResourceNotFoundException;
 import com.devees.paymentapi_cic_1.repository.PaymentRepository;
 import com.devees.paymentapi_cic_1.repository.SubscriberRepository;
+import com.devees.paymentapi_cic_1.service.EmailService;
 import com.devees.paymentapi_cic_1.service.PaymentService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,10 +29,14 @@ public class PaymentServiceImpl implements PaymentService {
     private final PaymentRepository paymentRepository;
     private final SubscriberRepository subscriberRepository;
 
+    private final EmailService emailService;
+
     public PaymentServiceImpl(PaymentRepository paymentRepository,
-                              SubscriberRepository subscriberRepository) {
+                              SubscriberRepository subscriberRepository,
+                              EmailService emailService) {
         this.paymentRepository = paymentRepository;
         this.subscriberRepository = subscriberRepository;
+        this.emailService = emailService;
     }
 
     @Override
@@ -58,6 +63,14 @@ public class PaymentServiceImpl implements PaymentService {
             }
         }
 
+        if (subscriber.getEmail() != null) {
+            emailService.sendPaymentSuccessEmail(
+                    subscriber.getEmail(),
+                    subscriber.getSubscriberCode(),
+                    request.getAmount()
+            );
+        }
+
         subscriber.setBalance(subscriber.getBalance().add(amount));
         subscriberRepository.save(subscriber);
 
@@ -67,6 +80,7 @@ public class PaymentServiceImpl implements PaymentService {
                 .status(PaymentStatus.OKAY)
                 .transactionCode(UUID.randomUUID().toString())
                 .dateTime(LocalDateTime.now())
+                .deleted(false)
                 .build();
 
         paymentRepository.save(payment);

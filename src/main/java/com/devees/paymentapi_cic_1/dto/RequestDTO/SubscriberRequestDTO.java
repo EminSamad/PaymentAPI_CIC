@@ -1,6 +1,7 @@
 package com.devees.paymentapi_cic_1.dto.RequestDTO;
 
 import com.devees.paymentapi_cic_1.entity.SubscriberType;
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PositiveOrZero;
@@ -31,4 +32,7 @@ public class SubscriberRequestDTO {
 
     @PositiveOrZero(message = "Balance cannot be negative")
     private BigDecimal balance;
+
+    @Email(message = "Invalid email format")
+    private String email;
 }
