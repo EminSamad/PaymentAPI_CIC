@@ -1,16 +1,16 @@
 package com.devees.paymentapi_cic_1.repository;
 
-import com.devees.paymentapi_cic_1.dto.ResponseDTO.PaymentResponseDTO;
 import com.devees.paymentapi_cic_1.entity.PaymentEntity;
 import com.devees.paymentapi_cic_1.entity.SubscriberEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
-import java.math.BigDecimal;
-import java.util.Arrays;
+import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Optional;
 
-public interface PaymentRepository extends JpaRepository<PaymentEntity, Long> {
+public interface PaymentRepository extends JpaRepository<PaymentEntity, Long> , JpaSpecificationExecutor<PaymentEntity> {
 
     List<PaymentEntity> findByDeletedFalse();
 
@@ -19,5 +19,7 @@ public interface PaymentRepository extends JpaRepository<PaymentEntity, Long> {
     List<PaymentEntity> findByTransactionCodeAndDeletedFalse(String transactionCode);
 
     List<PaymentEntity> findBySubscriber(SubscriberEntity subscriber);
+
+
 }
 
