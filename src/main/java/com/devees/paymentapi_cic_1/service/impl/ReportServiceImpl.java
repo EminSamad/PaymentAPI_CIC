@@ -2,14 +2,20 @@ package com.devees.paymentapi_cic_1.service.impl;
 
 import com.devees.paymentapi_cic_1.dto.ResponseDTO.PaymentReportDTO;
 import com.devees.paymentapi_cic_1.entity.PaymentEntity;
+import com.devees.paymentapi_cic_1.exception.ExcelExportException;
 import com.devees.paymentapi_cic_1.repository.PaymentRepository;
 import com.devees.paymentapi_cic_1.service.ReportService;
 import lombok.RequiredArgsConstructor;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
+import java.io.ByteArrayOutputStream;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -54,6 +60,40 @@ public class ReportServiceImpl implements ReportService {
                         p.getBalance()
                 ))
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public byte[] exportPaymentsToExcel(String subscriberCode, LocalDate startDate, LocalDate endDate) {
+        log.info("Exporting payments to Excel");
+
+        List<PaymentReportDTO> payments = getPaymentReport(subscriberCode, startDate, endDate);
+
+        try (Workbook workbook = new XSSFWorkbook()) {
+            Sheet sheet = workbook.createSheet("Payments");
+
+            // Header
+            Row header = sheet.createRow(0);
+            header.createCell(0).setCellValue("Subscriber Code");
+            header.createCell(1).setCellValue("Payment Date");
+            header.createCell(2).setCellValue("Amount (AZN)");
+
+            // Data
+            int rowNum = 1;
+            for (PaymentReportDTO p : payments) {
+                Row row = sheet.createRow(rowNum++);
+                row.createCell(0).setCellValue(p.getSubscriberCode());
+                row.createCell(1).setCellValue(p.getPaymentDate().toString());
+                row.createCell(2).setCellValue(p.getAmount().doubleValue());
+            }
+
+            ByteArrayOutputStream out = new ByteArrayOutputStream();
+            workbook.write(out);
+            return out.toByteArray();
+
+        } catch (Exception e) {
+            log.error("Error exporting to Excel: {}", e.getMessage());
+            throw new ExcelExportException("Error exporting to Excel");
+        }
     }
 
 

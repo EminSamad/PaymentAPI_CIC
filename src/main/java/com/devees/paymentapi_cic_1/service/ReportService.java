@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface ReportService {
     List<PaymentReportDTO> getPaymentReport(String subscriberCode, LocalDate startDate, LocalDate endDate);
+
+    byte[] exportPaymentsToExcel(String subscriberCode, LocalDate startDate, LocalDate endDate);
 }
