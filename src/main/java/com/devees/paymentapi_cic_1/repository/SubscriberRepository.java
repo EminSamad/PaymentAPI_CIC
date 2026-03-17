@@ -6,7 +6,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 import java.util.Optional;
 
-public interface SubscriberRepository extends JpaRepository<SubscriberEntity, Long> {
+public interface
+SubscriberRepository extends JpaRepository<SubscriberEntity, Long> {
 
     Optional<SubscriberEntity> findByIdAndIsDeletedFalse(Long id);
 
