@@ -61,16 +61,3 @@ public class SubscriberController {
         return ResponseEntity.ok("Subscriber deleted successfully");
     }
 }
-//
-//Spring security
-//        Authentication
-//                JWT token
-//Authorization
-//Role handling
-
-//
-//User entity
-//        Role entity  many-many
-//
-//                shole  admin , user
-//                        emin user

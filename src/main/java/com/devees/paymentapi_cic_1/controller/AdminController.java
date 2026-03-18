@@ -14,10 +14,4 @@ public class AdminController {
         return ResponseEntity.ok("Welcome Admin!");
     }
 
-    //TODO hesabatlar
-    //odenishler - subscriber code, odenis tarixi, odenish meblegi
-    //filterler - subcode, tarix araligi
-
-
-    //endpoint export to excel  File handling
 }

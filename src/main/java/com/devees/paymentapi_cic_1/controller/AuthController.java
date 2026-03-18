@@ -68,7 +68,6 @@ public class AuthController {
                 .build());
     }
 
-    //TODO add mail notification
     @PostMapping("/register")
     public ResponseEntity<AuthResponseDTO> register(@Valid @RequestBody RegisterRequestDTO request) {
         if (userRepository.findByUsername(request.getUsername()).isPresent()) {
