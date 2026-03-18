@@ -1,4 +1,4 @@
-package com.devees.paymentapi_cic_1.service.impl;
+package com.devees.paymentapi_cic_1.service.task;
 
 import com.devees.paymentapi_cic_1.entity.SubscriberEntity;
 import com.devees.paymentapi_cic_1.repository.PaymentRepository;
