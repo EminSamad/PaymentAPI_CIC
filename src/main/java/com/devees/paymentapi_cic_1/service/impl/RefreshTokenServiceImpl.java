@@ -41,7 +41,7 @@ public class RefreshTokenServiceImpl implements RefreshTokenService {
     public RefreshTokenEntity validateRefreshToken(String token) {
         log.info("Validating refresh token");
 
-        RefreshTokenEntity refreshToken = refreshTokenRepository.findByRefreshToken(token)
+        RefreshTokenEntity refreshToken = refreshTokenRepository.findByToken(token)
                 .orElseThrow(() -> {
                     log.error("Refresh token not found");
                     return new ResourceNotFoundException("Refresh token not found");

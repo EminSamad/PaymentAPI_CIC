@@ -3,6 +3,7 @@ package com.devees.paymentapi_cic_1.controller;
 import com.devees.paymentapi_cic_1.dto.RequestDTO.LoginRequest;
 import com.devees.paymentapi_cic_1.dto.RequestDTO.RegisterRequestDTO;
 import com.devees.paymentapi_cic_1.dto.ResponseDTO.AuthResponseDTO;
+import com.devees.paymentapi_cic_1.entity.RefreshTokenEntity;
 import com.devees.paymentapi_cic_1.entity.RoleEntity;
 import com.devees.paymentapi_cic_1.entity.UserEntity;
 import com.devees.paymentapi_cic_1.exception.DuplicateResourceException;
@@ -10,6 +11,7 @@ import com.devees.paymentapi_cic_1.repository.RoleRepository;
 import com.devees.paymentapi_cic_1.repository.UserRepository;
 import com.devees.paymentapi_cic_1.security.JwtService;
 import com.devees.paymentapi_cic_1.service.EmailService;
+import com.devees.paymentapi_cic_1.service.RefreshTokenService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +22,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import jakarta.validation.Valid;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/auth")
@@ -43,6 +47,9 @@ public class AuthController {
     @Autowired
     private EmailService emailService;
 
+    @Autowired
+    private RefreshTokenService refreshTokenService;
+
 
 
     @PostMapping("/login")
@@ -50,11 +57,14 @@ public class AuthController {
         Authentication auth = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(request.getUsername(), request.getPassword())
         );
-        UserDetails userDetails = (UserDetails) auth.getPrincipal();
-        String token = jwtService.generateToken(userDetails);
+        UserEntity user = (UserEntity) auth.getPrincipal();
+        String accessToken = jwtService.generateToken(user);
+        RefreshTokenEntity refreshToken = refreshTokenService.createRefreshToken(user);
+
         return ResponseEntity.ok(AuthResponseDTO.builder()
-                .token(token)
-                .username(userDetails.getUsername())
+                .token(accessToken)
+                .username(user.getUsername())
+                .refreshToken(refreshToken.getToken())
                 .build());
     }
 
@@ -79,10 +89,26 @@ public class AuthController {
 
         emailService.sendWelcomeEmail(request.getEmail(), request.getUsername());
 
-        String token = jwtService.generateToken(user);
+        String accessToken = jwtService.generateToken(user);
+        RefreshTokenEntity refreshToken = refreshTokenService.createRefreshToken(user);
+
         return ResponseEntity.ok(AuthResponseDTO.builder()
-                .token(token)
+                .token(accessToken)
                 .username(user.getUsername())
+                .refreshToken(refreshToken.getToken())
+                .build());
+    }
+
+    @PostMapping("/refresh")
+    public ResponseEntity<AuthResponseDTO> refresh(@RequestBody Map<String, String> request) {
+        String refreshToken = request.get("refreshToken");
+        RefreshTokenEntity tokenEntity = refreshTokenService.validateRefreshToken(refreshToken);
+        String newAccessToken = jwtService.generateToken(tokenEntity.getUser());
+
+        return ResponseEntity.ok(AuthResponseDTO.builder()
+                .token(newAccessToken)
+                .username(tokenEntity.getUser().getUsername())
+                .refreshToken(refreshToken)
                 .build());
     }
 }
