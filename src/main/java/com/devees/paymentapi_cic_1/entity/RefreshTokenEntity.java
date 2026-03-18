@@ -1,10 +1,7 @@
 package com.devees.paymentapi_cic_1.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
@@ -13,6 +10,7 @@ import java.time.LocalDateTime;
 @Getter@Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class RefreshTokenEntity {
 
     @Id
@@ -32,4 +30,7 @@ public class RefreshTokenEntity {
     public boolean isExpired() {
         return expiredAt != null;
     }
+
+    @Column(nullable = false)
+    private LocalDateTime expiryDate;
 }
