@@ -12,14 +12,14 @@ import com.devees.paymentapi_cic_1.repository.UserRepository;
 import com.devees.paymentapi_cic_1.security.JwtService;
 import com.devees.paymentapi_cic_1.service.EmailService;
 import com.devees.paymentapi_cic_1.service.RefreshTokenService;
+import com.devees.paymentapi_cic_1.service.TokenBlacklistService;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.userdetails.UserDetails;
-import jakarta.validation.Valid;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
@@ -49,7 +49,8 @@ public class AuthController {
 
     @Autowired
     private RefreshTokenService refreshTokenService;
-
+    @Autowired
+    private TokenBlacklistService tokenBlacklistService;
 
 
     @PostMapping("/login")
@@ -109,5 +110,16 @@ public class AuthController {
                 .username(tokenEntity.getUser().getUsername())
                 .refreshToken(refreshToken)
                 .build());
+    }
+
+    @PostMapping("/logout")
+    public ResponseEntity<String> logout(HttpServletRequest request) {
+        String accessToken = request.getHeader("Authorization");
+        if ((accessToken != null) && accessToken.startsWith("Bearer ")) {
+            String refreshToken = accessToken.substring(7);
+            long expiration = jwtService.getExpirationTime(refreshToken);
+            tokenBlacklistService.blacklistToken(refreshToken, expiration);
+        }
+        return ResponseEntity.ok("Logged out Successfully");
     }
 }

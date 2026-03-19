@@ -26,12 +26,12 @@ public class RefreshTokenServiceImpl implements RefreshTokenService {
     public RefreshTokenEntity createRefreshToken(UserEntity user) {
         log.info("Creating refresh token for user : {}", user.getUsername());
 
-        refreshTokenRepository.deleteByUserId(user);
+        refreshTokenRepository.deleteByUser(user);
 
         RefreshTokenEntity refreshTokenEntity = RefreshTokenEntity.builder()
                 .token(UUID.randomUUID().toString())
                 .user(user)
-                .expiryDate(LocalDateTime.now().plusDays(7))
+                .expiredAt(LocalDateTime.now().plusDays(7))
                 .build();
 
         return refreshTokenRepository.save(refreshTokenEntity);
@@ -60,7 +60,7 @@ public class RefreshTokenServiceImpl implements RefreshTokenService {
     @Transactional
     public void deleteByUser(UserEntity userEntity) {
         log.info("Deleting refresh token for user : {}", userEntity.getUsername());
-        refreshTokenRepository.deleteByUserId(userEntity);
+        refreshTokenRepository.deleteByUser(userEntity);
 
     }
 }

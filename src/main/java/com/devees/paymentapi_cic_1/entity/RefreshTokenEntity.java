@@ -31,6 +31,4 @@ public class RefreshTokenEntity {
         return expiredAt != null;
     }
 
-    @Column(nullable = false)
-    private LocalDateTime expiryDate;
 }
