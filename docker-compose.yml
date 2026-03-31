@@ -29,12 +29,6 @@ services:
     depends_on:
       - db
       - redis
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/paymentdb
-      SPRING_DATASOURCE_USERNAME: postgres
-      SPRING_DATASOURCE_PASSWORD: EminSamad
-      SPRING_REDIS_HOST: redis
-      SPRING_REDIS_PORT: 6379
 
 volumes:
   postgres_data:
