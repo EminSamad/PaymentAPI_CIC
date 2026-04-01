@@ -4,7 +4,6 @@ import com.devees.paymentapi_cic_1.dto.RequestDTO.SubscriberRequestDTO;
 import com.devees.paymentapi_cic_1.dto.ResponseDTO.SubscriberResponseDTO;
 import com.devees.paymentapi_cic_1.service.SubscriberService;
 import jakarta.validation.Valid;
-import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;

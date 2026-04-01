@@ -1,6 +1,5 @@
 package com.devees.paymentapi_cic_1.controller;
 
-import com.devees.paymentapi_cic_1.dto.RequestDTO.DepositRequest;
 import com.devees.paymentapi_cic_1.dto.RequestDTO.PaymentRequestDTO;
 import com.devees.paymentapi_cic_1.dto.ResponseDTO.PaymentResponseDTO;
 import com.devees.paymentapi_cic_1.dto.CheckPaymentDTO;
